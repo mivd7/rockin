@@ -52,14 +52,39 @@ body {
   display: block;
   font-size: 60px;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 29px;
+  animation-name: moveInLeft;
+  /* load animation by specified name on element */
+  animation-duration: 1s;
+
 }
 
 .heading-primary-sub {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  letter-spacing: 12px;
+  letter-spacing: 12.5px;
+}
+
+@keyframes moveInLeft {
+  0% {
+    /* 0% = start of animation */
+    opacity: 0;
+    /* makes text invisible at start */
+    transform: translateX(-100px);
+    /* starts the animation 100px left from the absolute center of the screen
+    in a straight direction along the x-line */
+  }
+  80% {
+    transform: translateX(20px)
+    /* @80 % complete of animation moves text 20px to right of center screen */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    /* return to status quo at end of animation */
+  }
 }
 
 .footer{
