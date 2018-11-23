@@ -55,7 +55,9 @@ body {
   letter-spacing: 29px;
   animation-name: moveInLeft;
   /* load animation by specified name on element */
-  animation-duration: 1s;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  /* makes animation decrease in speed (exponentionally?) towards the end */
 
 }
 
@@ -64,6 +66,9 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 12.5px;
+  animation-name: moveInRight;
+  /* load animation by specified name on element */
+  animation-duration: 1.5s;
 }
 
 @keyframes moveInLeft {
@@ -72,12 +77,12 @@ body {
     opacity: 0;
     /* makes text invisible at start */
     transform: translateX(-100px);
-    /* starts the animation 100px left from the absolute center of the screen
+    /* starts the animation 100px left from the absolute center of the heading-primary box
     in a straight direction along the x-line */
   }
   80% {
     transform: translateX(20px)
-    /* @80 % complete of animation moves text 20px to right of center screen */
+    /* @80 % complete of animation moves text 20px to right of center box */
   }
 
   100% {
@@ -87,7 +92,23 @@ body {
   }
 }
 
-.footer{
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-20px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+
+  }
+}
+
+.footer {
   position: center;
-  background-color: #55c57a; /* medium green
+  background-color: #55c57a; /* medium green */
 }
