@@ -18,9 +18,8 @@ body {
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh,  0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
-
 }
 
 .logo-box {
@@ -28,24 +27,28 @@ body {
   top: 40px;
   left: 40px;
 }
-/* box container for logo-image, determines position relative  to parent element ('header') */
 
+/* box container for logo-image, determines position relative  to parent element ('header') */
 .logo {
   height: 35px;
 }
-/* determine size of image */
 
+/* determine size of image */
 .text-box {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
   /* transform property 50% of element's own top (not parent) */
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 60px;
+  /* creates white space between header text and button */
 }
 
 .heading-primary-main {
@@ -58,7 +61,6 @@ body {
   animation-duration: 1.5s;
   animation-timing-function: ease-out;
   /* makes animation decrease in speed (exponentionally?) towards the end */
-
 }
 
 .heading-primary-sub {
@@ -78,9 +80,10 @@ body {
     /* starts the animation 100px left from the absolute center of the heading-primary box
     in a straight direction along the x-line */
   }
+
   80% {
     transform: translateX(10px)
-    /* @ 80 % complete of animation move text 20px to right of center box */
+      /* @ 80 % complete of animation move text 20px to right of center box */
   }
 
   100% {
@@ -95,6 +98,7 @@ body {
     opacity: 0;
     transform: translateX(100px);
   }
+
   80% {
     transform: translateX(-10px)
   }
@@ -102,11 +106,87 @@ body {
   100% {
     opacity: 1;
     transform: translate(0);
-
   }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  /* top to bottom 15px padding, right to left 40px padding */
+  display: inline-block;
+  /* prevents button from overlapping with header text */
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+  /* gives button on hover a shadow of 0 in x-direction, 10px in y-direction, 20px blur
+  and a black shadow-color with .2 transparency */
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  /* smaller shadow than hover to make it look closer to the page and further away
+  from user when clicked */
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* the z index defines the position of the elements if they are one on top of another.
+     here -1 sets it behind the original button element */
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  /* scales the button after hover to x the size it originally was */
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
+  /* automatically apply the styles up to zero percent before the animation starts
+     so it is invisible at load */
 }
 
 .footer {
   position: center;
-  background-color: #55c57a; /* medium green */
+  background-color: #55c57a;
+  /* medium green */
 }
