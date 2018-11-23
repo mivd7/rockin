@@ -66,9 +66,7 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 12.5px;
-  animation-name: moveInRight;
-  /* load animation by specified name on element */
-  animation-duration: 1.5s;
+  animation: moveInRight 1.5s ease-out;
 }
 
 @keyframes moveInLeft {
@@ -81,8 +79,8 @@ body {
     in a straight direction along the x-line */
   }
   80% {
-    transform: translateX(20px)
-    /* @80 % complete of animation moves text 20px to right of center box */
+    transform: translateX(10px)
+    /* @ 80 % complete of animation move text 20px to right of center box */
   }
 
   100% {
@@ -98,7 +96,7 @@ body {
     transform: translateX(100px);
   }
   80% {
-    transform: translateX(-20px)
+    transform: translateX(-10px)
   }
 
   100% {
