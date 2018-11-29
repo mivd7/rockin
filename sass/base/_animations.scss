@@ -1,0 +1,49 @@
+@keyframes moveInLeft {
+  0% {
+    /* 0% = start of animation */
+    opacity: 0;
+    /* makes text invisible at start */
+    transform: translateX(-10rem);
+    /* starts the animation 100px left from the absolute center of the heading-primary box
+    in a straight direction along the x-line */
+  }
+
+  80% {
+    transform: translateX(1rem)
+      /* @ 80 % complete of animation move text 20px to right of center box */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    /* return to status quo at end of animation */
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

@@ -1,11 +1,3 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
 *,
 *::after,
 *::before {
@@ -25,57 +17,6 @@ body {
   color: #777;
   padding: 3rem;
   box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 3.5rem; }
-
-/* box container for logo-image, determines position relative  to parent element ('header') */
-.header__logo {
-  height: 3.5rem; }
-
-/* determine size of image */
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* transform property 50% of element's own top (not parent) */
-  text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 6rem;
-  /* creates white space between header text and button */ }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 2.9rem;
-  animation-name: moveInLeft;
-  /* load animation by specified name on element */
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out;
-  /* makes animation decrease in speed (exponentionally?) towards the end */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.25rem;
-  animation: moveInRight 1.5s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -110,8 +51,30 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+  /* creates white space between header text and button */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 2.9rem;
+    animation-name: moveInLeft;
+    /* load animation by specified name on element */
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    /* makes animation decrease in speed (exponentionally?) towards the end */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.25rem;
+    animation: moveInRight 1.5s ease-out; }
+
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -127,17 +90,18 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /* gives button on hover a shadow of 0 in x-direction, 10px in y-direction, 20px blur
-  and a black shadow-color with .2 transparency */ }
+      and a black shadow-color with .2 transparency */ }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /* scales the button after hover to x the size it originally was */
+    opacity: 0;
+    /* then disappears */ }
 
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   /* smaller shadow than hover to make it look closer to the page and further away
-  from user when clicked */ }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
+      from user when clicked */ }
 
 .btn::after {
   content: "";
@@ -150,27 +114,42 @@ body {
   left: 0;
   z-index: -1;
   /* the z index defines the position of the elements if they are one on top of another.
-     here -1 sets it behind the original button element */
+         here -1 sets it behind the original button element */
   transition: all .5s;
   font-size: 1.6rem; }
 
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  /* scales the button after hover to x the size it originally was */
-  opacity: 0;
-  /* then disappears */ }
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards;
   /* automatically apply the styles up to zero percent before the animation starts
-     so it is invisible at load */ }
+         so it is invisible at load */ }
 
-.footer {
-  color: white;
-  background-color: #55c57a;
-  font-size: 2rem;
-  /* medium green */ }
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  /* determine size of image */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 3.5rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* transform property 50% of element's own top (not parent) */
+    text-align: center; }
+
+/* box container for logo-image, determines position relative  to parent element ('header') */
