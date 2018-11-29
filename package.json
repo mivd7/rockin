@@ -1,0 +1,22 @@
+{
+  "name": "css-udemy",
+  "version": "1.0.0",
+  "description": "Rockin all over the world",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mivd7/rockin.git"
+  },
+  "author": "mivd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mivd7/rockin/issues"
+  },
+  "homepage": "https://github.com/mivd7/rockin#readme",
+  "devDependencies": {
+    "node-sass": "^4.10.0"
+  }
+}
