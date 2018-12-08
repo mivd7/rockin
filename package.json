@@ -18,5 +18,8 @@
   "homepage": "https://github.com/mivd7/rockin#readme",
   "devDependencies": {
     "node-sass": "^4.10.0"
+  },
+  "dependencies": {
+    "liveserver": "^0.1.20"
   }
 }

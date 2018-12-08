@@ -8,8 +8,9 @@
 
 html {
   font-size: 62.5%;
-  /* golden standard: 62.5 % of 16px = 10px; allows users to change root font-size if they want but
-  at the same time keep all other rem-elements relative to 10px font-size for responsive web-design. */
+  /* golden standard: 62.5 % of 16px (browser standard) = 10px; allows users to change root font-size
+  (zooming in & out) if they want but at the same time keep all other rem-elements relative to 10px
+  font-size for responsive web-design. */
 }
 
 body {
