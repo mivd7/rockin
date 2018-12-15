@@ -1,5 +1,5 @@
 # ROCKIN ALL OVER THE WORLD
-Music travel site Rockin All Over The World - exercise in advanced CSS & SASS. 
+Music travel site Rockin All Over The World - exercise in advanced CSS & SASS.
 
 Images, font and starter pack via: https://github.com/jonasschmedtmann/advanced-css-course .
 
