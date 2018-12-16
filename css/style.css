@@ -52,13 +52,13 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #777;
-  padding: 3rem; }
+  padding: 5rem; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   /* creates white space between header text and button */ }
   .heading-primary--main {
     display: block;
@@ -259,7 +259,8 @@ body {
 /* box container for logo-image, determines position relative  to parent element ('header') */
 .row {
   max-width: 114rem;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 2.5rem; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
   .row::after {
@@ -287,7 +288,8 @@ body {
   color: white;
   background-color: #55c57a;
   font-size: 2rem;
-  align-self: center;
+  text-align: center;
+  margin-top: 10rem;
   /* medium green */ }
 
 .section-about {
@@ -298,4 +300,8 @@ body {
 .section-features {
   padding: 25rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
-  background-size: cover; }
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem; }
+  .section-features > * {
+    transform: skewY(7deg); }
